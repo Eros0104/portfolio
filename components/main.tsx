@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box, Container } from '@chakra-ui/react';
 import Head from 'next/head';
-import { Router } from 'next';
+import { Router } from 'next/router';
 import Navbar from './navbar';
 
 interface Props {
   children: JSX.Element;
+  router: Router;
 }
 
 function Main({ children, router }: Props) {
