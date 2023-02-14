@@ -15,6 +15,8 @@ const Section = ({ children, delay = 0 }: Props) => (
   <StyledDiv
     initial={{ y: 10, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     transition={{ duration: 0.5, delay }}
     mb={6}
   >
