@@ -10,8 +10,8 @@ import {
   List,
   ListItem,
 } from '@chakra-ui/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import Paragraph from '../components/paragraph';
 import Section from '../components/section';
 import Timeline from '../components/timeline';
@@ -90,12 +90,12 @@ const Home: NextPage = () => (
       <List>
         <ListItem>
           <Link href="https://github.com/eros0104" target="_blank">
-            <FontAwesomeIcon icon={faGithub} /> @eros0104
+            <GitHubIcon /> @eros0104
           </Link>
         </ListItem>
         <ListItem>
           <Link href="https://instagram.com/mendoncaeros" target="_blank">
-            <FontAwesomeIcon icon={faInstagram} /> @mendoncaeros
+            <InstagramIcon /> @mendoncaeros
           </Link>
         </ListItem>
       </List>
