@@ -6,10 +6,14 @@ import {
   Heading,
   Image,
   useColorModeValue,
+  Link,
+  List,
+  ListItem,
 } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Paragraph from '../components/paragraph';
 import Section from '../components/section';
-import { BioSection, BioYear } from '../components/bio';
 import Timeline from '../components/timeline';
 
 const Home: NextPage = () => (
@@ -64,6 +68,37 @@ const Home: NextPage = () => (
         Bio
       </Heading>
       <Timeline />
+    </Section>
+
+    <Section delay={0.3}>
+      <Heading as="h3" variant="section-title">
+        I ♥
+      </Heading>
+      <Paragraph>
+        Art, Music,{' '}
+        <Link href="https://instagram.com/mendoncaeros" target="_blank">
+          Drawing
+        </Link>
+        , Movies
+      </Paragraph>
+    </Section>
+
+    <Section delay={0.4}>
+      <Heading as="h3" variant="section-title">
+        Social Media
+      </Heading>
+      <List>
+        <ListItem>
+          <Link href="https://github.com/eros0104" target="_blank">
+            <FontAwesomeIcon icon={faGithub} /> @eros0104
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link href="https://instagram.com/mendoncaeros" target="_blank">
+            <FontAwesomeIcon icon={faInstagram} /> @mendoncaeros
+          </Link>
+        </ListItem>
+      </List>
     </Section>
   </Container>
 );

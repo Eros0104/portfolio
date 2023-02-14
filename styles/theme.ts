@@ -36,10 +36,6 @@ const fonts = {
   heading: "'M PLUS Rounded 1c'",
 };
 
-const colors = {
-  glassTeal: '#88ccaa',
-};
-
 const config = {
   initialColorMode: 'dark',
   useSystemColorMode: true,
@@ -47,7 +43,6 @@ const config = {
 
 const theme = extendTheme({
   config,
-  colors,
   fonts,
   components,
   styles,
