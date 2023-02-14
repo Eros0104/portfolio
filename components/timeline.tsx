@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { BioSection, BioYear } from './bio';
+import { Bio } from '../types';
 
 const Timeline = () => {
-  const [bioEvents, setBioEvents] = useState([]);
+  const [bioEvents, setBioEvents] = useState<Bio[]>([]);
   const getData = () => {
     fetch('bio.json', {
       headers: {
@@ -11,8 +12,10 @@ const Timeline = () => {
       },
     })
       .then(response => response.json())
-      .then(myJson => {
-        setBioEvents(myJson);
+      .then(bioList => {
+        setBioEvents(
+          bioList.map((item: any, idx: number) => ({ ...item, id: idx })),
+        );
       });
   };
   useEffect(() => {
@@ -22,7 +25,7 @@ const Timeline = () => {
   return (
     <>
       {bioEvents.map(bioEvent => (
-        <BioSection>
+        <BioSection key={bioEvent.id}>
           <BioYear>{bioEvent.year}</BioYear>
           {bioEvent.description}
         </BioSection>
