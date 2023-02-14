@@ -10,6 +10,7 @@ import {
 import Paragraph from '../components/paragraph';
 import Section from '../components/section';
 import { BioSection, BioYear } from '../components/bio';
+import Timeline from '../components/timeline';
 
 const Home: NextPage = () => (
   <Container>
@@ -18,9 +19,10 @@ const Home: NextPage = () => (
       bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
       p={3}
       mb={6}
+      mt={3}
       textAlign="center"
     >
-      Hello, I&apos;m a front-end developer based in Brazil!
+      Hello, I&apos;m a front-end developer based in Portugal!
     </Box>
     <Box>
       <Box>
@@ -53,8 +55,7 @@ const Home: NextPage = () => (
       </Heading>
       <Paragraph>
         I&apos;m a software developer with a passion for creating beautiful user
-        experiences. I&apos;m currently working at &quot;Level Up!&quot; as a
-        Front-end.
+        experiences.
       </Paragraph>
     </Section>
 
@@ -62,15 +63,7 @@ const Home: NextPage = () => (
       <Heading as="h3" variant="section-title">
         Bio
       </Heading>
-      <BioSection>
-        <BioYear>1999</BioYear>
-        Born in São Paulo, Brazil.
-      </BioSection>
-      <BioSection>
-        <BioYear>2021</BioYear>
-        Completed the technologist course in System analysis and development at
-        FIAP.
-      </BioSection>
+      <Timeline />
     </Section>
   </Container>
 );
