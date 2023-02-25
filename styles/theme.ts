@@ -1,11 +1,14 @@
 import { extendTheme } from '@chakra-ui/react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { mode } from '@chakra-ui/theme-tools';
+import colors from './colors';
+
+const { dark, light } = colors;
 
 const styles = {
   global: (props: any) => ({
     body: {
-      bg: mode('#f0e7db', '#202023')(props),
+      bg: mode(light.bg, dark.bg)(props),
     },
   }),
 };
@@ -26,7 +29,7 @@ const components = {
   },
   Link: {
     baseStyle: (props: any) => ({
-      color: mode('#3d7aed', '#ff63c3')(props),
+      color: mode(light.primary, dark.primary)(props),
       textUnderlineOffset: 3,
     }),
   },
