@@ -14,8 +14,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import ThemeToggleButton from './theme-toggle-button';
 import Logo from './logo';
+import ThemeSwitch from './theme-switch';
 
 interface LinkItemProps {
   href: string;
@@ -89,8 +89,8 @@ const Navbar = (props: Props) => {
             Contact me
           </LinkItem>
         </Stack>
-        <Box flex={1} textAlign="right">
-          <ThemeToggleButton />
+        <Box flex={1} justifyContent="right" display="flex" alignItems="center">
+          <ThemeSwitch />
           <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
             <Menu>
               <MenuButton
