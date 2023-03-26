@@ -1,6 +1,6 @@
-interface Bio {
-  year: number;
-  description: string;
+import BaseBio from './BaseBio';
+
+interface Bio extends BaseBio {
   id: number;
 }
 

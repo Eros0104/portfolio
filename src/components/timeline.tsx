@@ -1,23 +1,18 @@
 import { useEffect, useState } from 'react';
 import { BioSection, BioYear } from './bio';
 import { Bio } from '../types';
+import { BioService } from '../services';
 
 const Timeline = () => {
   const [bioEvents, setBioEvents] = useState<Bio[]>([]);
-  const getData = () => {
-    fetch('bio.json', {
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
-      .then(response => response.json())
-      .then(bioList => {
-        setBioEvents(
-          bioList.map((item: any, idx: number) => ({ ...item, id: idx })),
-        );
-      });
+
+  const getData = async () => {
+    const newBioEvents = (await BioService.get()).sort(
+      (a, b) => b.year - a.year,
+    );
+    setBioEvents(newBioEvents);
   };
+
   useEffect(() => {
     getData();
   }, []);
