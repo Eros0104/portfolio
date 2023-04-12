@@ -5,7 +5,7 @@ const colors = {
   },
   light: {
     bg: '#e0e0e1',
-    primary: '#48c1c3',
+    primary: '#028090',
   },
 };
 
