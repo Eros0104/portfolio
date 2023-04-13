@@ -7,7 +7,7 @@ import { loadOBJModel } from '../lib/model';
 const easeOutCirc = (x: number) => Math.sqrt(1 - (x - 1) ** 4);
 
 const VoxelGate = () => {
-  const refContainer = useRef();
+  const refContainer = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const [_renderer, setRenderer] = useState<THREE.WebGLRenderer>();
   const [_camera, setCamera] = useState<THREE.OrthographicCamera>();
@@ -108,7 +108,7 @@ const VoxelGate = () => {
       ref={refContainer}
       className="voxel-gate"
       m="auto"
-      at={['-20px', '-60px', '-120px']}
+      // at={['-20px', '-60px', '-120px']}
       mb={['-40px', '-140px', '-200px']}
       w={[280, 480, 640]}
       h={[280, 480, 640]}
