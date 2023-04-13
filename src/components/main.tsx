@@ -3,6 +3,7 @@ import { Box, Container } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Router } from 'next/router';
 import Navbar from './navbar';
+import VoxelGate from './voxel-gate';
 
 interface Props {
   children: JSX.Element;
@@ -20,6 +21,7 @@ function Main({ children, router }: Props) {
       <Navbar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
+        <VoxelGate />
         {children}
       </Container>
     </Box>
