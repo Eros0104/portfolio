@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React from 'react';
 import type { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -9,7 +10,10 @@ const MyApp = ({ Component, pageProps, router }: AppProps) => (
   <ChakraProvider theme={theme}>
     <Fonts />
     <Layout router={router}>
-      <Component {...pageProps} key={router.route} />
+      {
+        // @ts-ignore
+        <Component {...pageProps} key={router.route} />
+      }
     </Layout>
   </ChakraProvider>
 );
