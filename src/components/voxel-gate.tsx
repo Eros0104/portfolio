@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Box, Spinner } from '@chakra-ui/react';
+import { Box, Spinner, useColorMode } from '@chakra-ui/react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadOBJModel, loadLGTFModel } from '../lib/model';
@@ -12,10 +12,11 @@ const VoxelGate = () => {
   const [_renderer, setRenderer] = useState<THREE.WebGLRenderer>();
   const [_camera, setCamera] = useState<THREE.OrthographicCamera>();
   const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));
+
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       200 * Math.sin(0.2 * Math.PI),
-      200,
+      100,
       200 * Math.cos(0.2 * Math.PI),
     ),
   );
@@ -52,8 +53,6 @@ const VoxelGate = () => {
 
       camera.lookAt(target);
 
-      console.log(camera.position);
-
       setCamera(camera);
 
       const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
@@ -71,26 +70,27 @@ const VoxelGate = () => {
         setIsLoading(false);
       });
 
-      let req: any = null;
-      let frame = 0;
+      const req: any = null;
+      const frame = 0;
 
       const animate = () => {
         req = requestAnimationFrame(animate);
+        // frame = frame <= 100 ? frame + 1 : frame;
 
-        frame = frame <= 100 ? frame + 1 : frame;
+        // if (frame <= 100) {
+        //   const p = initialCameraPosition;
+        //   const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
+        //   camera.position.y = p.y;
+        //   camera.position.x =
+        //     p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
+        //   camera.position.z =
+        //     p.x * Math.cos(rotSpeed) - p.z * Math.sin(rotSpeed);
+        //   camera.lookAt(target);
+        // } else {
+        //   controls.update();
+        // }
 
-        if (frame <= 100) {
-          const p = initialCameraPosition;
-          const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
-          camera.position.y = 10;
-          camera.position.x =
-            p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
-          camera.position.z =
-            p.x * Math.cos(rotSpeed) - p.z * Math.sin(rotSpeed);
-          camera.lookAt(target);
-        } else {
-          controls.update();
-        }
+        controls.update();
         renderer.render(scene, camera);
       };
 
@@ -106,8 +106,7 @@ const VoxelGate = () => {
       ref={refContainer}
       className="voxel-gate"
       m="auto"
-      // at={['-20px', '-60px', '-120px']}
-      mb={['-40px', '-140px', '-275px']}
+      mb={['-120px', '-180px', '-275px']}
       pt="50px"
       w={[280, 480, 640]}
       h={[280, 480, 640]}
