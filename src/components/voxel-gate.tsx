@@ -70,7 +70,7 @@ const VoxelGate = () => {
         setIsLoading(false);
       });
 
-      const req: any = null;
+      let req: any = null;
       const frame = 0;
 
       const animate = () => {
