@@ -25,6 +25,7 @@ const Home: NextPage = () => (
       mb={6}
       mt={3}
       textAlign="center"
+      css={{ backdropFilter: 'blur(10px)' }}
     >
       Hello, I&apos;m a front-end developer based in Portugal!
     </Box>

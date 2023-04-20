@@ -58,20 +58,19 @@ const loadLGTFModel = (
       gltf => {
         const obj = gltf.scene;
         obj.name = 'torii';
-        obj.position.x = 0;
         obj.position.y = 0;
+        obj.position.x = 0;
         obj.receiveShadow = receiveShadow;
         obj.castShadow = castShadow;
         scene.add(obj);
 
-        obj.traverse(c => {
-          const child = <THREE.Mesh>c;
-          if (child.isObject3D) {
-            child.castShadow = castShadow;
-            child.receiveShadow = receiveShadow;
+        obj.traverse(child => {
+          const childAsMesh = child as THREE.Mesh;
+          if (childAsMesh.isMesh) {
+            childAsMesh.castShadow = castShadow;
+            childAsMesh.receiveShadow = receiveShadow;
           }
         });
-
         resolve(obj);
       },
       undefined,

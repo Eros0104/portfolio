@@ -20,8 +20,9 @@ function Main({ children, router }: Props) {
 
       <Navbar path={router.asPath} />
 
-      <Container maxW="container.md" pt={14}>
-        <VoxelGate />
+      <VoxelGate />
+
+      <Container maxW="container.md" pt={14} zIndex={1} position="relative">
         {children}
       </Container>
     </Box>

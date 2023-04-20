@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Box, Spinner } from '@chakra-ui/react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { loadOBJModel } from '../lib/model';
+import { loadOBJModel, loadLGTFModel } from '../lib/model';
 
 const easeOutCirc = (x: number) => Math.sqrt(1 - (x - 1) ** 4);
 
@@ -30,7 +30,7 @@ const VoxelGate = () => {
       const screenHeight = container.clientHeight;
 
       const renderer = new THREE.WebGLRenderer({
-        antialias: false,
+        antialias: true,
         alpha: true,
       });
       renderer.setPixelRatio(window.devicePixelRatio);
@@ -49,14 +49,15 @@ const VoxelGate = () => {
         50000,
       );
       camera.position.copy(initialCameraPosition);
+
       camera.lookAt(target);
+
+      console.log(camera.position);
+
       setCamera(camera);
 
-      // const ambientLight = new THREE.AmbientLight(0xcccccc, 0.05);
-      // scene.add(ambientLight);
-      const directionalLight = new THREE.DirectionalLight(0xcccccc, 0.8);
-      directionalLight.position.set(5, 10, 7.5);
-      scene.add(directionalLight);
+      const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
+      scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.autoRotate = true;
@@ -64,10 +65,7 @@ const VoxelGate = () => {
       controls.enableZoom = false;
       setControls(controls);
 
-      loadOBJModel(scene, '/japanese-gate.obj', {
-        receiveShadow: false,
-        castShadow: false,
-      }).then(() => {
+      loadLGTFModel(scene, '/torii-gate.glb').then(() => {
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
         animate();
         setIsLoading(false);
@@ -109,7 +107,8 @@ const VoxelGate = () => {
       className="voxel-gate"
       m="auto"
       // at={['-20px', '-60px', '-120px']}
-      mb={['-40px', '-140px', '-200px']}
+      mb={['-40px', '-140px', '-275px']}
+      pt="50px"
       w={[280, 480, 640]}
       h={[280, 480, 640]}
       position="relative"
