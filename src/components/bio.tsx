@@ -2,16 +2,19 @@ import { Box } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 
 const bulletSize = '1rem';
-const bulletTop = '0.25rem';
+const bulletTop = '0.125rem';
 
 const lineWidth = '0.2rem';
 const lineTop = `calc(${bulletSize} + ${bulletTop})`;
 const lineLeft = `calc((${bulletSize} / 2) - (${lineWidth} / 2))`;
 const lineBottom = `-${bulletTop}`;
 
+const bioYearWidth = '2.25rem';
+const bioYearRightMargin = '1rem';
+
 export const BioSection = styled(Box)`
-  padding-left: 6.6rem;
-  text-indent: -4.4rem;
+  padding-left: 5.5rem;
+  text-indent: calc(0px - ${bioYearRightMargin} - ${bioYearWidth});
   padding-bottom: 1rem;
   position: relative;
 
@@ -41,13 +44,9 @@ export const BioSection = styled(Box)`
   }
 `;
 
-// mask-image: radial-gradient(
-// circle at 50% 50%,
-// rgba(0, 0, 0, 0) 49%,
-// rgba(0, 0, 0, 1) 50%
-// );
-
 export const BioYear = styled.span`
+  width: ${bioYearWidth};
+  text-align: center;
   font-weight: bold;
-  margin-right: 1em;
+  margin-right: ${bioYearRightMargin};
 `;
