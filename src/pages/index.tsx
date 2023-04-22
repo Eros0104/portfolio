@@ -9,12 +9,14 @@ import {
   Link,
   List,
   ListItem,
+  Button,
 } from '@chakra-ui/react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Paragraph from '../components/paragraph';
 import Section from '../components/section';
 import Timeline from '../components/timeline';
+import openNewTab from '../lib/openNewTab';
 
 const Home: NextPage = () => (
   <Container>
@@ -88,16 +90,26 @@ const Home: NextPage = () => (
       <Heading as="h3" variant="section-title">
         Social Media
       </Heading>
-      <List>
+      <List mt={5} spacing={3}>
         <ListItem>
-          <Link href="https://github.com/eros0104" target="_blank">
-            <GitHubIcon /> @eros0104
-          </Link>
+          <Button
+            onClick={() => openNewTab('https://github.com/eros0104')}
+            variant="outline"
+            leftIcon={<GitHubIcon />}
+            colorScheme="teal"
+          >
+            @eros0104
+          </Button>
         </ListItem>
         <ListItem>
-          <Link href="https://instagram.com/mendoncaeros" target="_blank">
-            <InstagramIcon /> @mendoncaeros
-          </Link>
+          <Button
+            onClick={() => openNewTab('https://instagram.com/mendoncaeros')}
+            variant="outline"
+            leftIcon={<InstagramIcon />}
+            colorScheme="teal"
+          >
+            @mendoncaeros
+          </Button>
         </ListItem>
       </List>
     </Section>
