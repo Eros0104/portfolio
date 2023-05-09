@@ -1,6 +1,6 @@
 const colors = {
   dark: {
-    bg: '#2a282a',
+    bg: '#141414',
     primary: '#ee2a7d',
   },
   light: {
