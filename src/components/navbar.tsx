@@ -52,7 +52,13 @@ const Navbar = (props: Props) => {
       as="nav"
       w="100%"
       bg={useColorModeValue('#ffffff40', '#20202380')}
-      css={{ backdropFilter: 'blur(10px)' }}
+      css={{
+        backdropFilter: 'blur(10px)',
+        borderBottom: `1.5px solid ${useColorModeValue(
+          'rgba(0,0,0,0.16)',
+          'rgba(255, 255, 255, 0.25)',
+        )}`,
+      }}
       zIndex={100}
       {...props}
     >
