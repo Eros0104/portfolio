@@ -100,9 +100,6 @@ const Navbar = (props: Props) => {
                 variant="outline"
               />
               <MenuList>
-                <NextLink href="/" passHref>
-                  <MenuItem>About</MenuItem>
-                </NextLink>
                 <NextLink href="/works" passHref>
                   <MenuItem>Works</MenuItem>
                 </NextLink>
