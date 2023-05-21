@@ -32,6 +32,15 @@ const worksSections: WorkSection[] = [
     section: 'Personal Projects',
     works: [
       {
+        title: 'Portfolio',
+        description: `Inspired by Takuya Matsuyama's tutorial, the portfolio combines the power of Next.js, a popular React framework, with the flexible and customizable UI components provided by Chakra UI.`,
+        link: 'https://github.com/Eros0104/portfolio',
+        img: {
+          alt: 'Image showing a "Ma" kanji',
+          src: 'images/works/portfolio.png',
+        },
+      },
+      {
         title: '3D Rotating Sphere',
         description: `The "3D Rotating Sphere" program written in JavaScript demonstrates an engaging animation of a rotating sphere within a 3D space. Using the HTML Canvas element and pure JavaScript calculations, this program provides an interactive and visually appealing experience.`,
         link: 'https://3d-sphere-indol.vercel.app/',
