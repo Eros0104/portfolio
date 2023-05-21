@@ -88,9 +88,6 @@ const Navbar = (props: Props) => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
-          <LinkItem href="/posts" path={path}>
-            Posts
-          </LinkItem>
           <LinkItem href="/contact" path={path}>
             Contact me
           </LinkItem>
