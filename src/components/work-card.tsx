@@ -32,7 +32,7 @@ const WorkCard = ({ children, img, link, title }: CardProps) => (
     <Image
       objectFit="cover"
       width="100%"
-      height="8rem"
+      height={{ base: '12rem', sm: '8rem' }}
       src={img.src}
       alt={img.alt}
       borderRadius="lg"
