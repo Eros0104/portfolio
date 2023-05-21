@@ -25,14 +25,11 @@ interface LinkItemProps {
 
 const LinkItem = ({ href, children, path }: LinkItemProps) => {
   const active = path === href;
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900');
+  const activeColor = useColorModeValue('gray.600', 'whiteAlpha.600');
+  const inactiveColor = useColorModeValue('gray.900', 'whiteAlpha.900');
   return (
     <NextLink href={href}>
-      <Link
-        p={2}
-        bg={active ? 'glassteal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-      >
+      <Link p={2} color={active ? activeColor : inactiveColor}>
         {children}
       </Link>
     </NextLink>
