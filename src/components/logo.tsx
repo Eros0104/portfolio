@@ -17,7 +17,7 @@ const Logo = () => (
     <a>
       <LogoBox>
         <Image
-          src={`images/${useColorModeValue('light', 'dark')}-logo.png`}
+          src={`images/${useColorModeValue('black', 'white')}-logo.png`}
           width="1.5rem"
           marginRight="0.25rem"
         />
