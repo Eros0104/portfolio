@@ -85,9 +85,6 @@ const Navbar = (props: Props) => {
           <LinkItem href="/works" path={path}>
             Works
           </LinkItem>
-          <LinkItem href="/contact" path={path}>
-            Contact me
-          </LinkItem>
         </Stack>
         <Box flex={1} justifyContent="right" display="flex" alignItems="center">
           <ThemeSwitch />
