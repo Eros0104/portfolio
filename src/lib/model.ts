@@ -25,7 +25,6 @@ const loadOBJModel = (
             child.castShadow = castShadow;
             child.receiveShadow = receiveShadow;
             if (child.material) {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               child.material.map = texture;
             }

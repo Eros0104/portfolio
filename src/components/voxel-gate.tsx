@@ -65,7 +65,6 @@ const VoxelGate = () => {
       setControls(controls);
 
       loadLGTFModel(scene, '/torii-gate.glb').then(() => {
-        // eslint-disable-next-line @typescript-eslint/no-use-before-define
         animate();
         setIsLoading(false);
       });

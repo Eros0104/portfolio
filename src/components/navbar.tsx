@@ -63,7 +63,6 @@ const Navbar = (props: Props) => {
         display="flex"
         p={2}
         maxW="container.md"
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         wrap="wrap"
         align="center"
